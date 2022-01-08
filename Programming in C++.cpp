@@ -4,32 +4,29 @@ using std::endl;
 using std::cin;
 using std::cout;
 
+int LOG(unsigned int x)
+{
+	unsigned int pow = 0;
+	int base = 2;
+	unsigned int res = 2;
+	for (; res <= x; ++pow)
+	{
+		res *= base;
+	}
+	return pow;
+}
+
 int main()
 {
-	char space = ' ';
-	char sym = '\0';
-	while (cin.get(sym)) //читает
+	unsigned int testNum = 0;
+	cin >> testNum;
+
+	unsigned int num = 0;
+	for (unsigned int i = 0; i < testNum; ++i)
 	{
-		if (sym != space) //если не пробелы
-		{
-			cout << sym; //выводит не пробелы
-		}
-		else             //если пробел
-		{
-			cout << sym; //выводит его
-			while (cin.get(sym)) //читает
-			{
-				if (sym == space)  //если равен пробелу
-				{
-					cout << ""; //выводит ничего
-				}
-				else              //если не пробел
-				{
-					cout << sym;  //выводит его
-					break;        //выходит из цикла
-				}
-			}
-		}
+
+		cin >> num;
+		cout << LOG(num) << endl;
 	}
 
 	return 0;
