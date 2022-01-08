@@ -1,11 +1,1 @@
-int power(int x, unsigned p) {
-	int answer = 1;
-	if (p > 0) {
-		for (int i = 0; static_cast<unsigned int>(i) < p; ++i)
-		{
-			answer *= x;
-		}
-		return answer;
-	}
-	return answer;
-}
+#define MAX(a,b,r) do{int n1 = a;	int n2 = b;	r = n1 > n2 ? n1 : n2; break;} while(true)
