@@ -1,11 +1,10 @@
-template<typename mue, typename shue>
-struct SameType
-{
-    static const bool value = 0;
-};
+#include <cstddef> // size_t
 
-template <typename mue>
-struct SameType <mue, mue>
+// реализуйте шаблонную функцию array_size,
+// которая возвращает значение типа size_t.
+
+template <typename T, size_t S>
+size_t array_size(const T(&arr)[S])
 {
-    static const bool value = 1;
-};
+    return S;
+}
