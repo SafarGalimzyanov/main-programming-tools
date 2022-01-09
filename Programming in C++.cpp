@@ -1,43 +1,23 @@
-#include <string> // std::string
+/*
+#include <iostream>
 
-struct Character
-{
-    std::string const& name() const;
-    unsigned health() const;
+struct Foo {
+    void say() const { std::cout << "Foo says: " << msg << "\n"; }
+    protected:
+    Foo(const char *msg) : msg(msg) { }
+    private:
+    const char *msg;
 };
 
-struct LongRange : Character
-{
-    std::string const& name() const;
-    unsigned health() const;
+ void foo_says(const Foo &foo) { foo.say(); }
+*/
 
-    unsigned range() const;
+struct Aue : public Foo
+{
+public:
+    Aue(const char* msg) : Foo(msg) { }
 };
 
-struct SwordsMan : Character
-{
-    std::string const& name() const;
-    unsigned health() const;
-
-    unsigned strength() const;
-};
-
-struct Wizard : LongRange
-{
-    std::string const& name() const;
-    unsigned health() const;
-
-    unsigned range() const;
-
-    unsigned mana() const;
-};
-
-struct Archer : LongRange
-{
-    std::string const& name() const;
-    unsigned health() const;
-
-    unsigned range() const;
-
-    unsigned accuracy() const;
-};
+Foo get_foo(const char* msg) {
+    return Aue(msg);
+}
