@@ -1,24 +1,43 @@
-/*
-  struct Cls {
-  Cls(char c, double d, int i);
-  private:
-      char c;
-      double d;
-      int i;
-  };
-*/
+#include <string> // std::string
 
-//Доступ к полю c объекта cls.
-char& get_c(Cls& cls) {
-    return *(char*)&cls;
-}
+struct Character
+{
+    std::string const& name() const;
+    unsigned health() const;
+};
 
-//Доступ к полю d объекта cls.
-double& get_d(Cls& cls) {
-    return *((double*)&cls + 1);
-}
+struct LongRange : Character
+{
+    std::string const& name() const;
+    unsigned health() const;
 
-//Доступ к полю i объекта cls.
-int& get_i(Cls& cls) {
-    return *((int*)&cls + 4);
-}
+    unsigned range() const;
+};
+
+struct SwordsMan : Character
+{
+    std::string const& name() const;
+    unsigned health() const;
+
+    unsigned strength() const;
+};
+
+struct Wizard : LongRange
+{
+    std::string const& name() const;
+    unsigned health() const;
+
+    unsigned range() const;
+
+    unsigned mana() const;
+};
+
+struct Archer : LongRange
+{
+    std::string const& name() const;
+    unsigned health() const;
+
+    unsigned range() const;
+
+    unsigned accuracy() const;
+};
