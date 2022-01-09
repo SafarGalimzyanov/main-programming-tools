@@ -1,6 +1,13 @@
-unsigned strlen(const char* str)
+void strcat(char* to, const char* from)
 {
-    unsigned i = 0;
-    for (i = 0; str[i] != 0; ++i);
-    return i;
+    //переход к концу строки to
+    while (*to != '\0')
+    {
+        ++to;
+    }
+    while (*to = *from)
+    {
+        ++to;
+        ++from;
+    }
 }
